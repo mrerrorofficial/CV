@@ -1,0 +1,153 @@
+:root {
+    --primary: #2b2d42;       /* Dark blue */
+    --secondary: #d10a11;     /* Bold red */
+    --text: #333333;         /* High-contrast black */
+    --accent: #555555;       /* Medium gray */
+    --light-bg: #f8f9fa;     /* Light background */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: white;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+    margin: 2rem 0 1.5rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin: 1rem 0 0.5rem;
+}
+
+/* Contact Bar */
+.contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text);
+}
+
+.contact-item[href] {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.skill-list {
+    list-style-type: none;
+    padding-left: 1.2rem;
+}
+
+.skill-list li {
+    margin-bottom: 0.6rem;
+    position: relative;
+}
+
+.skill-list li::before {
+    content: "▹";
+    position: absolute;
+    left: -1.2rem;
+    color: var(--secondary);
+}
+
+/* Labs */
+.lab {
+    background: var(--light-bg);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 3px solid var(--secondary);
+}
+
+.lab-title {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Education & Certs */
+.institution, .date, .cert-meta {
+    color: var(--accent);
+    margin: 0.3rem 0;
+}
+.cert-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cert-link:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background: #011627;
+    color: #d6deeb;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    .contact-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
